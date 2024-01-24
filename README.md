@@ -1,7 +1,7 @@
 # Example Python Django with external OAUTH Provider for an API
 
 This repository provides a Django example for ZITADEL using OAuth to provide the API with security through permission from an external system.
-This example is provided as companion to our [guide](https://zitadel.com/docs/examples/login/django),
+This example is provided as companion to our [guide](https://zitadel.com/docs/examples/secure-api/django),
 which should produce this application when followed.
 
 ## Features
@@ -21,11 +21,11 @@ Be sure to [configure ZITADEL](https://docs-git-docs-example-symfony-zitadel.ver
 
 Create a project as described in [Secure an API using the JSON Web Token Profile in ZITADEL](https://github.com/zitadel/examples-api-access-and-token-introspection/blob/main/api-jwt/README.md).
 
-You should have a key-file `.json`, the domain ZITADEL is running under and the introspection URL.
+You should have a key-file `.json`, the domain ZITADEL is running under and the token and introspection URL.
 
 Create an serviceuser as descirbed in [Call a Secured API Using JSON Web Token (JWT) Profile](https://github.com/zitadel/examples-api-access-and-token-introspection/tree/main/service-user-jwt).
 
-You should have a client-key-file `.json`, the ID of the project you gave permissons to and 
+You should have a client-key-file `.json` and the ID of the project you gave permissons to.
 
 You have to install Python as described in [their documentation](https://wiki.python.org/moin/BeginnersGuide/Download) and then download all dependencies through:
 
