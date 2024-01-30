@@ -15,17 +15,9 @@ which should produce this application when followed.
 ## Getting started
 
 If you want to run this example directly you can fork and clone it to your system.
-Be sure to [configure ZITADEL](https://docs-git-docs-example-symfony-zitadel.vercel.app/docs/examples/login/symfony#zitadel-setup) to accept requests from this app.
+Be sure to [configure ZITADEL](https://docs-git-python-django-example-zitadel.vercel.app/docs/examples/secure-api/django#zitadel-setup) to accept requests from this API.
 
 ### Prerequisites
-
-Create a project as described in [Secure an API using the JSON Web Token Profile in ZITADEL](https://github.com/zitadel/examples-api-access-and-token-introspection/blob/main/api-jwt/README.md).
-
-You should have a key-file `.json`, the domain ZITADEL is running under and the token and introspection URL.
-
-Create an serviceuser as descirbed in [Call a Secured API Using JSON Web Token (JWT) Profile](https://github.com/zitadel/examples-api-access-and-token-introspection/tree/main/service-user-jwt).
-
-You should have a client-key-file `.json` and the ID of the project you gave permissons to.
 
 You have to install Python as described in [their documentation](https://wiki.python.org/moin/BeginnersGuide/Download) and then download all dependencies through:
 
@@ -39,16 +31,32 @@ Use your IDE to build and launch the development environment or use GitHub code 
 
 ### Django
 
-After setting up your system and repository, create the sqlite-database.
+Fill in the `.env`-file in your directory with the following information:
 
 ```bash
-python manage.py migrate
+ZITADEL_INTROSPECTION_URL = 'URL to the introspection endpoint to verify the provided token'
+ZITADEL_DOMAIN = 'Domain used as audience in the token verification'
+API_PRIVATE_KEY_FILE_PATH = 'Path to the key.json created in ZITADEL'
+```
+
+I should look something like this:
+
+```bash
+ZITADEL_INTROSPECTION_URL = 'https://example.zitadel.cloud/oauth/v2/introspect'
+ZITADEL_DOMAIN = 'https://example.zitadel.cloud'
+API_PRIVATE_KEY_FILE_PATH = '/tmp/example/250719519163548112.json'
 ```
 
 And run the server:
 
 ```bash
-python manage.py runserve
+python manage.py runserver
 ```
 
 Visit [http://localhost:8000/public/] to see if the server is running correctly.
+Then you can call [http://localhost:8000/private](http://localhost:8000/private) for example with CURL:
+
+```bash
+export TOKEN='eyJhbGciOiJSUzI1NiIsImtpZCI6IjI1MD...'
+curl -H "Authorization: Bearer $TOKEN" -X GET http://localhost:8000/api/private
+```

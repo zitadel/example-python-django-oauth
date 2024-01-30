@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+from dotenv import load_dotenv
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -122,7 +124,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ZITADEL_INTROSPECTION_URL = 'http://localhost:8080/oauth/v2/introspect'
-ZITADEL_DOMAIN = 'http://localhost:8080'
-API_PRIVATE_KEY_FILE_PATH = '/Users/benz/Downloads/250719519163548112.json'
+load_dotenv()
+
+ZITADEL_INTROSPECTION_URL = os.environ.get("ZITADEL_INTROSPECTION_URL")
+ZITADEL_DOMAIN = os.environ.get("ZITADEL_DOMAIN")
+API_PRIVATE_KEY_FILE_PATH = os.environ.get("API_PRIVATE_KEY_FILE_PATH")
 ALGORITHM = 'RS256'
