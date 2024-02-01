@@ -39,7 +39,7 @@ ZITADEL_DOMAIN = 'Domain used as audience in the token verification'
 API_PRIVATE_KEY_FILE_PATH = 'Path to the key.json created in ZITADEL'
 ```
 
-I should look something like this:
+It should look something like this:
 
 ```bash
 ZITADEL_INTROSPECTION_URL = 'https://example.zitadel.cloud/oauth/v2/introspect'
@@ -53,7 +53,7 @@ And run the server:
 python manage.py runserver
 ```
 
-Visit [http://localhost:8000/public/] to see if the server is running correctly.
+Visit [http://localhost:8000/public/](http://localhost:8000/public/) to see if the server is running correctly.
 Then you can call [http://localhost:8000/private](http://localhost:8000/private) for example with CURL:
 
 ```bash
