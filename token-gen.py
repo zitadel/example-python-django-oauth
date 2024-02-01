@@ -7,9 +7,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-ZITADEL_DOMAIN = 'http://localhost:8080'
-CLIENT_PRIVATE_KEY_FILE_PATH = '/Users/benz/Downloads/250735228274868584.json'
-ZITADEL_TOKEN_URL = 'http://localhost:8080/oauth/v2/token'
+ZITADEL_DOMAIN = 'https://example.zitadel.cloud'
+CLIENT_PRIVATE_KEY_FILE_PATH = '/tmp/examples/250735228274868582.json'
+ZITADEL_TOKEN_URL = 'https://example.zitadel.cloud/oauth/v2/token'
 PROJECT_ID = '250719447407395280'
 
 # Load the downloaded JSON file
