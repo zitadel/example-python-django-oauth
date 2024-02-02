@@ -15,7 +15,7 @@ which should produce this application when followed.
 ## Getting started
 
 If you want to run this example directly you can fork and clone it to your system.
-Be sure to [configure ZITADEL](https://docs-git-python-django-example-zitadel.vercel.app/docs/examples/secure-api/django#zitadel-setup) to accept requests from this API.
+Be sure to [configure ZITADEL](https://zitadel.com/docs/examples/secure-api/django#zitadel-setup) to accept requests from this API.
 
 ### Prerequisites
 
