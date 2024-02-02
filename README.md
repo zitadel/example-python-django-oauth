@@ -47,14 +47,20 @@ ZITADEL_DOMAIN = 'https://example.zitadel.cloud'
 API_PRIVATE_KEY_FILE_PATH = '/tmp/example/250719519163548112.json'
 ```
 
+Run database migrations:
+
+```bash
+python manage.py migrate
+```
+
 And run the server:
 
 ```bash
 python manage.py runserver
 ```
 
-Visit [http://localhost:8000/public/](http://localhost:8000/public/) to see if the server is running correctly.
-Then you can call [http://localhost:8000/private](http://localhost:8000/private) for example with CURL:
+Visit [http://localhost:8000/api/public](http://localhost:8000/api/public) to see if the server is running correctly.
+Then you can call [http://localhost:8000/api/private](http://localhost:8000/api/private) for example with CURL:
 
 ```bash
 export TOKEN='eyJhbGciOiJSUzI1NiIsImtpZCI6IjI1MD...'
